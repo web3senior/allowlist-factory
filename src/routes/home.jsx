@@ -6,7 +6,7 @@ import { MenuIcon } from './components/icons'
 import Loading from './components/LoadingSpinner'
 import { CheckIcon, ChromeIcon, BraveIcon } from './components/icons'
 import toast, { Toaster } from 'react-hot-toast'
-import { useAuth } from './../contexts/AuthContext'
+import { useAuth, web3 } from './../contexts/AuthContext'
 import Logo from './../../src/assets/logo.svg'
 import styles from './Home.module.scss'
 import allowListFactoryABI from './../abi/allowlist-abi.json'
@@ -69,11 +69,11 @@ function Home({ title }) {
           /> */}
 
           {/* <TokenTransfersListView chain_name="eth-mainnet" address="0x20e229667Cec8A0e9D3C6Fb89693B2a44ec2C50e" contract_address="0x20e229667Cec8A0e9D3C6Fb89693B2a44ec2C50e" /> */}
-          {/* <AddressActivityListView address="0x20e229667Cec8A0e9D3C6Fb89693B2a44ec2C50e" /> */}
+           <AddressActivityListView address={auth.wallet} /> 
           {auth.wallet && (
             <>
               <NFTWalletTokenListView
-                address="0x20e229667Cec8A0e9D3C6Fb89693B2a44ec2C50e"
+                address={auth.wallet}
                 chain_names={['eth-mainnet', 'matic-mainnet', 'bsc-mainnet', 'avalanche-mainnet', 'optimism-mainnet']}
               />
             </>

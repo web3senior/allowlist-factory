@@ -87,29 +87,6 @@ export default function Root() {
           <Outlet />
         </main>
       </div>
-
-      <div className="cover" onClick={() => handleOpenNav()} />
-      <nav className={`${styles.nav} animate`} id="modal">
-        <figure>
-          <img src={Logo} alt={`logo`} />
-        </figure>
-        <ul>
-          <li className="">
-            <button onClick={() => handleNavLink(`/`)}>
-              <MaterialIcon name="home" />
-              <span>Home</span>
-            </button>
-          </li>
-          <li className="">
-            <button onClick={() => handleNavLink(`/about`)}>
-              <MaterialIcon name="info" />
-              <span>About us</span>
-            </button>
-          </li>
-        </ul>
-
-        <small>{`Version ${import.meta.env.VITE_VERSION}`}</small>
-      </nav>
     </>
   )
 }
