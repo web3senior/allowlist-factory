@@ -1,0 +1,16 @@
+@import './../styles/components/responsive';
+
+.section {
+  position: relative;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+background: linear-gradient(252.33deg, #FEE7FE 0.51%, #FFFFFF 100%);
+
+  @include small-down() {
+    
+  }
+}
