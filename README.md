@@ -17,9 +17,9 @@
 **Transparency and immutability:** All whitelist data is stored on the blockchain, ensuring tamper-proof records and open visibility.
 
 ### Contract Address 
-[Ethereum Sepolia](https://sepolia.etherscan.io/address/0xA5e73b15c1C3eE477AED682741f0324C6787bbb8):
+[Ethereum Sepolia](https://sepolia.etherscan.io/address/0xa5e73b15c1c3ee477aed682741f0324c6787bbb8):
 ```
-0xA5e73b15c1C3eE477AED682741f0324C6787bbb8
+0xa5e73b15c1c3ee477aed682741f0324c6787bbb8
 ```
 
 ### Getting Started

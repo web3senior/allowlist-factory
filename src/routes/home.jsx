@@ -25,14 +25,16 @@ function Home({ title }) {
  
   
   const getAddresses = async () => {
-    const myToken = new web3.eth.Contract(allowListFactoryABI, '0xa5e73b15c1c3ee477aed682741f0324c6787bbb8')
-    setAllowlist(await myToken.methods.getAddress().call())
+    
+    const myContract = new web3.eth.Contract(allowListFactoryABI, '0xa5e73b15c1c3ee477aed682741f0324c6787bbb8')
+    setAllowlist(await myContract.methods.getAddress().call())
+ 
   }
 
   const addNewAddress = async (addr) => {
     console.log(addr)
-    const myToken = new web3.eth.Contract(allowListFactoryABI, '0xa5e73b15c1c3ee477aed682741f0324c6787bbb8')
-    console.log(await myToken.methods.addAddress().send({ from: addr, gas: 100_000 }))
+    const myContract = new web3.eth.Contract(allowListFactoryABI, '0xa5e73b15c1c3ee477aed682741f0324c6787bbb8')
+    console.log(await myContract.methods.addAddress().send({ from: addr, gas: 100_000 }))
   }
 
   useEffect(() => {
@@ -48,7 +50,7 @@ function Home({ title }) {
             <div className="card__body">
               {allowlist &&
                 allowlist.map((item) => {
-                  return <>⌛ {item.sender}</>
+                  return <p>⌛ {item.sender}</p>
                 })}
             </div>
           </div>

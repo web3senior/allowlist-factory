@@ -88,7 +88,7 @@ export function AuthProvider({ children }) {
   const navigate = useNavigate()
   const location = useLocation()
   const { connect, connected } = useConnect()
-  
+
   function logout() {
     localStorage.removeItem('accessToken')
     navigate('/login')
