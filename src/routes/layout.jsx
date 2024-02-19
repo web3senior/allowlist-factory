@@ -31,7 +31,7 @@ export default function Root() {
 
   const getBalance = async () => {
     const client = new CovalentClient('cqt_rQXcP6C3GMhjq8wxXb6PwmX8kXQ8')
-    const resp = await client.BalanceService.getTokenBalancesForWalletAddress('eth-mainnet', '0x20e229667Cec8A0e9D3C6Fb89693B2a44ec2C50e')
+    const resp = await client.BalanceService.getTokenBalancesForWalletAddress('eth-mainnet', auth.wallet)
     setBalance(resp.data)
     console.log(resp.data)
   }
@@ -76,7 +76,7 @@ export default function Root() {
               <span></span>
               <ul className={`d-flex flex-column align-items-left`}>
                 <li style={{color: 'var(--area1)'}}>{auth.wallet && `${auth.wallet.slice(0, 4)}...${auth.wallet.slice(38)}`}</li>
-                <li>Balance: {balance && balance.items[0].pretty_quote}</li>
+                <li>{balance && balance.items && <>Balance: {balance.items[0].pretty_quote}</>}</li>
               </ul>
               
             </div>
